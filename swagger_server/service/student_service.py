@@ -20,7 +20,10 @@ def add(student=None):
     res = student_db.search(query)
     if res:
         return 'already exists', 409
-
+    if not student:
+        return 'Invalid student data', 400
+    if not student.first_name or not student.last_name:
+        return 'Missing required fields', 400
     doc_id = student_db.insert(student.to_dict())
     student.student_id = doc_id
     return student.student_id
