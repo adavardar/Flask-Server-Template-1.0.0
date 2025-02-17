@@ -21,8 +21,6 @@ def add_student(body=None):  # noqa: E501
         body = Student.from_dict(connexion.request.get_json())  # noqa: E501
         return add(body)
 
-    return 'do some magic!'
-
 
 def delete_student(student_id):  # noqa: E501
     """deletes a student
