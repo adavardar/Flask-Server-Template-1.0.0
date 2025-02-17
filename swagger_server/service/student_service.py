@@ -7,7 +7,6 @@ student_collection = db['students']
 
 
 def add(student=None):
-    print(HERE!!!)
     if not student:
         return 'Invalid student data', 400
     if not student.first_name or not student.last_name:
